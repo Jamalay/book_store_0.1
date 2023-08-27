@@ -1,0 +1,10 @@
+body {
+  width: 100%;
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito", sans-serif;
+}
+
+main {
+  min-height: 520px;
+}

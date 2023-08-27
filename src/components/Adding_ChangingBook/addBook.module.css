@@ -1,0 +1,100 @@
+.div {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 60%;
+  height: 35px;
+  border: solid 1px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  width: 97%;
+  outline: 0;
+  border: none;
+  font-size: 20px;
+}
+
+.form {
+  padding-top: 1em;
+  box-sizing: border-box;
+}
+
+.button {
+  transition-duration: 200ms;
+  cursor: pointer;
+  width: 49%;
+  font-size: 18px;
+  color: white;
+  background-color: #26a9e0;
+  border: none;
+  border-radius: 4px;
+}
+
+.button:hover {
+  transition-duration: 200ms;
+  background-color: #228bb8;
+}
+
+.buttons_div {
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  height: 35px;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.h3 {
+  position: sticky;
+  /* background-color: blue; */
+  top: 0;
+}
+
+.img {
+  width: 120px;
+}
+
+.bookSelection_main_div {
+  width: 140px;
+  position: fixed;
+  /* left: 0; */
+  height: 530px;
+  overflow: auto;
+}
+
+.bookSelection_main_div::-webkit-scrollbar {
+  width: 7px;
+}
+
+.bookSelection_main_div::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+}
+
+body {
+  scrollbar-color: #458245 #020100;
+}
+
+.selection_card {
+  cursor: pointer;
+}
+
+.selection_cardChoosed {
+  /* background-color: red; */
+}
+
+.disabled {
+  transition-duration: 200ms;
+  width: 49%;
+  font-size: 18px;
+  color: white;
+  background-color: #85cfee;
+  border: none;
+  border-radius: 4px;
+}

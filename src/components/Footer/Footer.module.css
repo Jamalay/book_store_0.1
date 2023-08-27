@@ -1,0 +1,59 @@
+.footer {
+  margin-top: 100px;
+  background-color: #ecf6fe;
+  clear: both;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.information_title {
+  font-size: 20px;
+  font-weight: 400;
+  width: 35%;
+  min-width: 300px;
+}
+
+.text {
+  font-size: 14px;
+  color: gray;
+  width: 90%;
+}
+
+.link {
+  font-size: 14px;
+  color: gray;
+}
+
+.container {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+hr {
+  width: 87%;
+}
+
+.icons {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  cursor: pointer;
+  transition-duration: 100ms;
+  fill: gray;
+}
+
+.icon:hover {
+  transition-duration: 100ms;
+  fill: #26a9e0;
+}
