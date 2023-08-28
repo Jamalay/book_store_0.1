@@ -66,6 +66,7 @@ const BookSelection: React.FC<bookSelectionProp> = ({
                 setChoosed(!choosed);
                 console.log(choosed);
               }}
+              key={String(book._id)}
             >
               <div>
                 <img className={styles.img} src={book.img} />

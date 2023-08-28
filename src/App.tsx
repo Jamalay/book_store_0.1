@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { set } from "mongoose";
-import { addBook, fetchBooks, Book } from "./features/shopSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./app/store";
+import { useState } from "react";
 import { Route, Routes } from "react-router";
 import Books from "./components/Books";
 import { Add_ChangeBook } from "./components/Adding_ChangingBook/addBook";
@@ -10,6 +6,8 @@ import { Header } from "./components/Header/Header";
 import { Cart } from "./components/Cart";
 import { AboutBook } from "./components/AboutBook/AboutBook";
 import { Footer } from "./components/Footer/Footer";
+import { SignUp } from "./components/Authorization/SignUp/SignUp";
+import { SignIn } from "./components/Authorization/SignIn/SignIn";
 
 function App() {
   const [searchingBook, setSearchingBook] = useState<string>("");
@@ -28,6 +26,8 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="books/addbook" element={<Add_ChangeBook />} />
           <Route path="books/about_book/:bookId" element={<AboutBook />} />
+          <Route path="auth_sign_up" element={<SignUp />} />
+          <Route path="auth_sign_in" element={<SignIn />} />
         </Routes>
       </main>
       <Footer />
