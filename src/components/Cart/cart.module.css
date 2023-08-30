@@ -1,0 +1,9 @@
+.li {
+  list-style: none;
+  background-color: red;
+  width: 50%;
+}
+
+.img {
+  width: 100px;
+}

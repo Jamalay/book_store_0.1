@@ -10,16 +10,22 @@ export interface User {
   login: String;
   password: String;
   role?: String;
-  cart?: [];
+  cart?: String[];
 }
 
 interface userState {
-  user: User | null;
+  user: User;
   error: String | null | unknown;
 }
 
 const initialState: userState = {
-  user: null,
+  user: {
+    _id: "",
+    login: "",
+    password: "",
+    role: "",
+    cart: [],
+  },
   error: null,
 };
 
@@ -30,7 +36,7 @@ export const getUser = createAsyncThunk<
 >("get/user", async (data, thunkAPI) => {
   try {
     const res = await fetch("http://localhost:3001/user", {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${thunkAPI.getState().applicationSlice.token}`,
@@ -53,7 +59,7 @@ export const getUser = createAsyncThunk<
 export const addBookToCart = createAsyncThunk<
   void,
   String,
-  { rejectValue: string; state: RootState }
+  { rejectValue: String; state: RootState }
 >("add/tocart", async (bookId, thunkAPI) => {
   try {
     console.log(bookId);
@@ -72,6 +78,31 @@ export const addBookToCart = createAsyncThunk<
   }
 });
 
+export const removeFromCart = createAsyncThunk<
+  String,
+  String,
+  { rejectValue: String; state: RootState }
+>("remove/fromcart", async (bookId, thunkAPI) => {
+  try {
+    const res = await fetch("http://localhost:3001/removebook", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${thunkAPI.getState().applicationSlice.token}`,
+      },
+      body: JSON.stringify({ bookId: bookId }),
+    });
+
+    const data = await res.json();
+
+    console.log(data);
+
+    return data;
+  } catch (err: any) {
+    thunkAPI.rejectWithValue(err.message);
+  }
+});
+
 const usersSlice = createSlice({
   name: "user",
   initialState,
@@ -80,12 +111,21 @@ const usersSlice = createSlice({
     builder
       .addCase(getUser.fulfilled, (state, action) => {
         state.user = action.payload;
-        // state.user.cart;
         state.error = null;
       })
       .addCase(getUser.rejected, (state, action) => {
         state.error = action.payload;
       });
+
+    builder.addCase(removeFromCart.fulfilled, (state, action) => {
+      state.error = null;
+      if (state.user?.cart != undefined) {
+        console.log(state.user.cart);
+        state.user.cart = state.user?.cart?.filter(
+          (cartItem) => cartItem !== action.payload
+        );
+      }
+    });
   },
 });
 

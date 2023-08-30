@@ -19,7 +19,27 @@ const AboutBook = () => {
       {books.map((book) => {
         if (book._id === bookId) {
           return (
-            <img className={styles.img} src={book.img} key={String(book._id)} />
+            <div className={styles.container}>
+              <div>
+                <img
+                  className={styles.img}
+                  src={book.img}
+                  key={String(book._id)}
+                />
+              </div>
+              <div>
+                <div>
+                  <h2>{book.name}</h2>
+                  <a>{book.author}</a>
+                </div>
+                <div>
+                  <div>
+                    <span>ID товара</span>
+                    <span className={styles.span}>{book._id}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           );
         }
       })}

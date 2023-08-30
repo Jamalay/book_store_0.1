@@ -59,8 +59,8 @@ const Print_book: React.FC<bookProps> = ({ book, DeleteBook }) => {
         </Link>
       </div>
       {/* <div>
-        <button onClick={() => DeleteBook(book._id)}>x</button>
-      </div> */}
+          <button onClick={() => DeleteBook(book._id)}>x</button>
+        </div> */}
     </div>
   );
 };

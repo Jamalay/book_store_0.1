@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { User } from "./usersSlice";
 import { create } from "domain";
 
@@ -68,10 +68,21 @@ export const authSignIn = createAsyncThunk<
   }
 });
 
+// export const logOut = createAsyncThunk(
+//   "user/logout",
+//   async (state, action) => {}
+// );
+
+export const LogOut = createAction("LogOut");
+
 const applicationSlice = createSlice({
   name: "application",
   initialState,
-  reducers: {},
+  reducers: {
+    LogOut: (state, action) => {
+      state.token = "";
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(authSignUp.fulfilled, (state, action) => {

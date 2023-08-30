@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 import { Cart_svg } from "./Cart_svg";
 import { Plus_svg } from "./Plus_svg";
 import { Categories_svg } from "./Categories_svg";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../app/store";
+import { useEffect } from "react";
+import { getUser } from "../../features/usersSlice";
+import { Profile_svg } from "./Profile_svg";
 
 interface headerProp {
   searchingBook: String;
@@ -20,11 +25,21 @@ const Header: React.FC<headerProp> = ({
     console.log(searchingBook);
   };
 
+  const user = useSelector((state: RootState) => state.usersSlice.user);
+  const token = useSelector((state: RootState) => state.applicationSlice.token);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch<any>(getUser());
+  }, [token]);
+
   return (
     <header>
       <div className={styles.main_div}>
         <div className={styles.site_logo}>
-          <Link to="/books">На главную</Link>
+          <Link to="/books" className={styles.a}>
+            На главную
+          </Link>
         </div>
         <div>
           <button className={styles.categories_button}>
@@ -55,8 +70,9 @@ const Header: React.FC<headerProp> = ({
           </form>
         </div>
         <div className={styles.links_div}>
-          <Plus_svg />
+          {user?.role === "ADMIN" ? <Plus_svg /> : ""}
           <Cart_svg />
+          <Profile_svg />
         </div>
       </div>
     </header>

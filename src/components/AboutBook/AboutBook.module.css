@@ -1,3 +1,15 @@
 .img {
   width: 300px;
 }
+
+.container {
+  /* background-color: red; */
+  max-width: 880px;
+  margin-left: 8%;
+  margin-top: 40px;
+  display: flex;
+}
+
+.span {
+  margin-left: 40px;
+}

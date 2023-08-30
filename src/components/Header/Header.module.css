@@ -114,6 +114,7 @@ header {
 .links_div {
   min-width: 100px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -125,9 +126,18 @@ header {
   color: white;
 }
 
-a {
+.a {
   text-decoration: none;
   color: white;
+}
+
+.profile {
+  stroke: white;
+}
+
+.profile:hover {
+  transition-duration: 300ms;
+  stroke: rgb(223, 217, 217);
 }
 
 @media screen and (max-width: 570px) {
