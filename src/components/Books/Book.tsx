@@ -17,6 +17,7 @@ const Print_book: React.FC<bookProps> = ({ book, DeleteBook }) => {
   let isAuthorizated = false;
 
   const token = useSelector((state: RootState) => state.applicationSlice.token);
+  const user = useSelector((state: RootState) => state.usersSlice.user);
   const dispathc = useDispatch();
 
   console.log(token);
@@ -58,9 +59,11 @@ const Print_book: React.FC<bookProps> = ({ book, DeleteBook }) => {
           </button>
         </Link>
       </div>
-      {/* <div>
+      {user.role === "ADMIN" ? (
+        <div>
           <button onClick={() => DeleteBook(book._id)}>x</button>
-        </div> */}
+        </div>
+      ) : null}
     </div>
   );
 };

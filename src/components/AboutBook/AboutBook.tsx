@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchBooks } from "../../features/shopSlice";
 import styles from "./AboutBook.module.css";
+import { Reviews } from "../Review";
 
 const AboutBook = () => {
   const dispatch = useDispatch();
@@ -14,12 +15,13 @@ const AboutBook = () => {
   useEffect(() => {
     dispatch<any>(fetchBooks());
   }, []);
+
   return (
     <main>
       {books.map((book) => {
         if (book._id === bookId) {
           return (
-            <div className={styles.container}>
+            <div className={styles.container} key={String(book._id)}>
               <div>
                 <img
                   className={styles.img}
@@ -43,6 +45,7 @@ const AboutBook = () => {
           );
         }
       })}
+      <Reviews bookId={String(bookId)} />
     </main>
   );
 };

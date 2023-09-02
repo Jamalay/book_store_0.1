@@ -32,7 +32,7 @@ const Cart = (): JSX.Element => {
             return books.map((book) => {
               if (cartItem === book._id) {
                 return (
-                  <li className={styles.li}>
+                  <li className={styles.li} key={String(book._id)}>
                     <div>
                       <img className={styles.img} src={book.img} />
                     </div>

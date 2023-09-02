@@ -9,6 +9,7 @@ import { Footer } from "./components/Footer/Footer";
 import { SignUp } from "./components/Authorization/SignUp/SignUp";
 import { SignIn } from "./components/Authorization/SignIn/SignIn";
 import { Profile } from "./components/Profile";
+import { Reviews } from "./components/Review";
 
 function App() {
   // var Jan02_1970 = new Date();

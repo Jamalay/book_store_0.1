@@ -1,0 +1,105 @@
+.container {
+  width: 84%;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.review {
+  margin-top: 25px;
+  background-color: #e3f9e1;
+  border-radius: 8px;
+}
+
+.review_data {
+  width: 95%;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.date_and_username {
+  display: flex;
+  justify-content: space-between;
+  color: gray;
+}
+
+.title {
+  margin-top: 40px;
+}
+
+.likes_dislikes {
+  /* width: 90%; */
+  padding: 35px;
+  display: flex;
+  /* justify-content: flex-end; */
+}
+
+.like_dislike {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.like_dislike_svg {
+  margin-right: 10px;
+  cursor: pointer;
+  stroke: gray;
+}
+
+.like_dislike_svg:hover {
+  /* transition-duration: 400ms; */
+  /* stroke: red; */
+}
+
+.reviewButton {
+  transition-duration: 300ms;
+  width: 152px;
+  height: 40px;
+  background-color: #26a9e0;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.reviewButton:hover {
+  transition-duration: 300ms;
+  background-color: #228bb8;
+}
+
+.Review {
+  font-size: 30px;
+  font-weight: 570;
+}
+
+.Reviews_amount {
+  margin-left: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  color: gray;
+}
+
+.review_adding_block {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.remove_cart {
+  fill: gray;
+  cursor: pointer;
+}
+
+.remove_cart:hover {
+  fill: rgb(235, 85, 85);
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+}
